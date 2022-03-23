@@ -13,7 +13,7 @@
 </script>
         <?php
         Bundle::Css('test_css', array(
-            '/Content/css/croppie.css'
+            './Content/css/croppie.css'
         ));
         ?>
 <div class="container-fluid">
