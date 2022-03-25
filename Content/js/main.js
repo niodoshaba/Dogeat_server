@@ -56,7 +56,7 @@ $(function(){
     $("#search_btn").click(function(){
         $.ajax({
             type: "GET",
-            url: "/dogeat_server/?controller=BackStageMemberControllers&action=Search",
+            url: "/back/?controller=BackStageMemberControllers&action=Search",
             data: { key_in_text: $("#search").val(),
                     search_target_page: $("#search-page-target").val()
                     },
@@ -187,7 +187,7 @@ $(function(){
 $(function(){
     $.ajax({
         type: "GET",
-        url: "/dogeat_server/?controller=BackStageMemberControllers&action=ReturnPayButNoyShipmentOrder",
+        url: "/back/?controller=BackStageMemberControllers&action=ReturnPayButNoyShipmentOrder",
         dataType: "json",
         success: function (response) {
             console.log(response);

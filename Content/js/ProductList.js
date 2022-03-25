@@ -116,7 +116,7 @@ $(".edit_btn").click(function(){
     let pro_id = $(this).attr("id");
     $.ajax({
         type: "POST",
-        url: "/dogeat_server/index.php?action=showProductInformation&controller=BackStageProductControllers",
+        url: "/back/index.php?action=showProductInformation&controller=BackStageProductControllers",
         data: {pro_id:pro_id},
         dataType: "json",
         success: function (response) {
@@ -164,9 +164,9 @@ function determine(statue){
     }
     if(picture_size_conform){
         if(statue == "edit_sql"){
-            $("#form").attr("action","/dogeat_server/index.php?action=updateProduct&controller=BackStageProductControllers");
+            $("#form").attr("action","/back/index.php?action=updateProduct&controller=BackStageProductControllers");
         }else{
-            $("#form").attr("action","/dogeat_server/index.php?action=addProduct&controller=BackStageProductControllers");
+            $("#form").attr("action","/back/index.php?action=addProduct&controller=BackStageProductControllers");
         }
         $("#form").submit();
     }else{

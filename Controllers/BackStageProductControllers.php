@@ -69,10 +69,10 @@ class BackStageProductControllers extends ControllerBase {
         $status = $updateProduct->UpdateProductInfo($product_num,$product_catalog,$product_name,$product_price,$product_status,$product_img,$product_info,$product_deadtime,$product_element,$product_content);
         if($status){
             echo "<script>alert('".$product_name."修改完成');</script>";
-            echo "<script>document.location.href='/dogeat_server/index.php?action=ProductList&controller=Home';</script>";
+            echo "<script>document.location.href='/back/index.php?action=ProductList&controller=Home';</script>";
         }else{
             echo "<script>alert('".$product_name."修改失敗');</script>";
-            echo "<script>document.location.href='/dogeat_server/index.php?action=ProductList&controller=Home';</script>";
+            echo "<script>document.location.href='/back/index.php?action=ProductList&controller=Home';</script>";
         }
     }
     public function addProduct(){
@@ -98,14 +98,14 @@ class BackStageProductControllers extends ControllerBase {
             if($product_img){
                 $addProduct->insertProductInfo($add_product_catalog,$add_product_name,$add_product_price,$add_product_status,$product_img,$add_product_info,$add_product_deadtime,$add_product_element,$add_product_content);
                 echo "<script>alert('".$add_product_name."新增完成');</script>";
-                echo "<script>document.location.href='/dogeat_server/index.php?action=ProductList&controller=Home';</script>";
+                echo "<script>document.location.href='/back/index.php?action=ProductList&controller=Home';</script>";
             }else{
                 echo "<script>alert('".$add_product_name."新增失敗');</script>";
-                echo "<script>document.location.href='/dogeat_server/index.php?action=ProductList&controller=Home';</script>";
+                echo "<script>document.location.href='/back/index.php?action=ProductList&controller=Home';</script>";
             }
         }else{
             echo "<script>alert('".$add_product_name."請填寫所有產品資訊');</script>";
-            echo "<script>document.location.href='/dogeat_server/index.php?action=ProductList&controller=Home';</script>";
+            echo "<script>document.location.href='/back/index.php?action=ProductList&controller=Home';</script>";
         }
     }
 }

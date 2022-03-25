@@ -3,7 +3,7 @@ $(window).load(function(){
         let delete_id=$(this).attr("data-delete");
         $.ajax({
             type: "GET",
-            url: "/dogeat_server/index.php?action=DeleteMemberMessage&controller=BackStageMemberControllers",
+            url: "/back/index.php?action=DeleteMemberMessage&controller=BackStageMemberControllers",
             data: {"delete_id":delete_id},
             dataType: "text",
             success: function (response) {
@@ -27,7 +27,7 @@ $(window).load(function(){
         $("#reply").click(function () { 
             $.ajax({
                 type: "GET",
-                url: "/dogeat_server/index.php?action=ReplyMemberMessage&controller=BackStageMemberControllers",
+                url: "/back/index.php?action=ReplyMemberMessage&controller=BackStageMemberControllers",
                 data: {"reply_id":reply_id,"administrator_Reply":$("#administrator_Reply").val(),"now_date":now_date},
                 dataType: "text",
                 success: function (response) {

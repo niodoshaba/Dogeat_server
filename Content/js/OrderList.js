@@ -40,7 +40,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                url: "/dogeat_server/?controller=BackStageMemberControllers&action=UpdateOrder",
+                url: "/back/?controller=BackStageMemberControllers&action=UpdateOrder",
                 data: {
                     ord_no : each_tr.find("td:eq(0)").text(),
                     ord_status : $("#ord_status").val(),

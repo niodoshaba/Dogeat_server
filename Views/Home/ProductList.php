@@ -196,8 +196,8 @@
             </form>
 <?php 
         Bundle::Js('test_js', array(
-            '/Content/js/croppie.js',
-            '/Content/js/ProductList.js'
+            './Content/js/croppie.js',
+            './Content/js/ProductList.js'
         ));
 ?>
 <script>
@@ -207,19 +207,19 @@
     //重整頁面後當前用誰排序給予底色及上下的img
     $("#"+previous_id).css("background","#dbe8f3");
     if(sort_by == "ASC"){
-    $("#"+previous_id).append('<img src="/dogeat_server//Content/img/images/up-arrow.png" style = "margin: 0 5px 2px;" alt="">');
+    $("#"+previous_id).append('<img src="/back//Content/img/images/up-arrow.png" style = "margin: 0 5px 2px;" alt="">');
     }else{
-        $("#"+previous_id).append('<img src="/dogeat_server//Content/img/images/down-arrow.png" style = "margin: 0 5px 2px;" alt="">');
+        $("#"+previous_id).append('<img src="/back//Content/img/images/down-arrow.png" style = "margin: 0 5px 2px;" alt="">');
     }
     //切換排序
     $("#cata_no,#pro_price,#pro_status").click(function () { 
         if($(this).attr("id") == $('#'+previous_id).attr("id")){
             //點擊同一個id改變排序方法
             if(sort_by == "ASC"){
-                $(this).children().attr("src","/dogeat_server//Content/img/images/up-arrow.png");
+                $(this).children().attr("src","/back//Content/img/images/up-arrow.png");
                 sort_by = "DESC";
             }else{
-                $(this).children().attr("src","/dogeat_server//Content/img/images/down-arrow.png");
+                $(this).children().attr("src","/back//Content/img/images/down-arrow.png");
                 sort_by = "ASC";
             }
         }else{
@@ -228,12 +228,12 @@
             $('#'+previous_id).children().remove();
             previous_id = $(this).attr("id");
             $(this).css("background","#dbe8f3");
-            $(this).append('<img src="/dogeat_server//Content/img/images/down-arrow.png" style = "margin: 0 5px 2px;" alt="">');
+            $(this).append('<img src="/back//Content/img/images/down-arrow.png" style = "margin: 0 5px 2px;" alt="">');
             sort_by = "ASC";
         }
         $.ajax({
             type: "GET",
-            url: "/dogeat_server/index.php?action=ProductList&controller=Home",
+            url: "/back/index.php?action=ProductList&controller=Home",
             data: {"sort_name":previous_id,"sort_by":sort_by},
             dataType: "text",
             success: function (response) {

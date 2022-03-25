@@ -5,7 +5,7 @@
         public function uploadpicture($product_num,$img,$i){
             $destination_path = getcwd().DIRECTORY_SEPARATOR;
             $target_path = $destination_path . 'Content/img/'. $product_num."_".(string)$i;
-            $product_img = "/dogeat_server/Content/img/".$product_num."_".(string)$i.".jpg";
+            $product_img = "/back/Content/img/".$product_num."_".(string)$i.".jpg";
             if(is_file($target_path.".jpg")){
                 unlink($target_path.".jpg");//將檔案刪除
             }

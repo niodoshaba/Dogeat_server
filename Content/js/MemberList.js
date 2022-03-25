@@ -8,7 +8,7 @@
         if($("#add_member_name").val() && $("#add_member_phone").val() && $("#add_member_account").val() && $("#add_member_password").val() && $("#add_member_status").val()){
             $.ajax({
                 type: "GET",
-                url: "/dogeat_server/?controller=BackStageMemberControllers&action=signup",
+                url: "/back/?controller=BackStageMemberControllers&action=signup",
                 data: {add_member_name : $("#add_member_name").val(),
                     add_member_address : $("#add_member_address").val(),
                     add_member_phone : $("#add_member_phone").val(),
@@ -33,7 +33,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "/dogeat_server/?controller=BackStageMemberControllers&action=deleteUser",
+                url: "/back/?controller=BackStageMemberControllers&action=deleteUser",
                 data: {cus_no:delete_no},
                 dataType: "text",
                 success: function (response) {
@@ -62,7 +62,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "/dogeat_server/?controller=BackStageMemberControllers&action=showUserByNo",
+                    url: "/back/?controller=BackStageMemberControllers&action=showUserByNo",
                     data: {cus_no:edit_no},
                     dataType: "text",
                     success: function (response) {
@@ -89,7 +89,7 @@
                 //然後Ajax
                 $.ajax({
                     type: "POST",
-                    url: "/dogeat_server/?controller=BackStageMemberControllers&action=updataUser",
+                    url: "/back/?controller=BackStageMemberControllers&action=updataUser",
                     data: {member_name:$("#add_member_name").val(),
                         member_address:$("#add_member_address").val(),
                         member_phone:$("#add_member_phone").val(),
